@@ -1,6 +1,14 @@
 #include <ruby.h>
 #include <string.h>
 
+#ifndef RSTRING_PTR
+#define RSTRING_PTR(x) RSTRING((x))->ptr
+#endif
+
+#ifndef RSTRING_LEN
+#define RSTRING_PTR(x) RSTRING((x))->len
+#endif
+
 /* call-seq: String#clear!
  *
  * Zero out the string contents.
